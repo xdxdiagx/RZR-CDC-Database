@@ -1,0 +1,1005 @@
+<br>
+
+<div style="display: block;" id="buyerLog">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Buyers Information</h5>
+            <br>
+            <!-- <span>Use a class<code>table</code> to any table.</span> -->
+            <select id="service" style="display: none;">
+              <option value="all">All Room Type</option>
+              <option value="Single">Single</option>
+              <option value="Double">Double</option>
+              <option value="Suite">Suite</option>
+              <option value="Duplex">Duplex</option>
+            </select>
+        
+            <select id="status" style="display: none;">
+              <option value="all">All Amenities</option>
+              <option value="Wifi">Wifi</option>
+              <option value="Parking">Parking</option>
+              <option value="House Keeping">House Keeping</option>
+              <option value="Swimming pool">Swimming pool</option>
+              <option value="Room Service">Room Service</option>
+              <option value="Shuttle Service">Shuttle Service</option>
+            </select>
+            <a type="text" class="btn btn-info btn-sm" style="float: right;">
+              <input id="search" type="text" placeholder="">
+              <i class="fa fa-search">
+              </i>
+              Search
+          </a>
+          <label class="select">
+            &nbsp;&nbsp;Page Filter
+              <select class="form-control" name="options" id="pfilter">
+                <option value="10">10</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="1000">All</option>
+              </select> <i></i>
+          </label>
+          </div>
+          <div class="table-responsive">
+            <table class="table" id="data">
+              <thead>
+                <tr>
+                  <th scope="col" style="width:3%">#</th>
+                  <th scope="col" style="width:20%">Fullname</th>
+                  <th scope="col" style="width:20%">Phone Number</th>
+                  <th scope="col" style="width:20%">Email</th>
+                  <th scope="col" style="width:20%">FB Name</th>
+                  <!-- <th scope="col">Sales</th> -->
+                  <!-- <th scope="col">Role</th> -->
+                  <th scope="col" style="width:35%">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="myTable">
+                <tr ng-repeat="users in data">
+                  <th scope="row"> {{ $index + 1 }}.</th>
+                  <td>{{ users.firstname }} {{ users.middlename }} {{ users.surname }}</td>
+                  <td>{{ users.cellphoneNo }}</td>
+                  <td>{{ users.email }}</td>
+                  <td>{{ users.fbname }}</td>
+                  <td>
+                    <!-- <div class="pull-left"></div>
+                    <button type="button" class="btn btn btn-info" ng-click="selectUser(users)">edit</button>
+            <button type="button" class="btn btn btn-danger" ng-click="selectUser2(users)">delete</button>
+  
+                    <a class="btn btn-info btn-sm" href="" ng-click="selectUser(users)">
+                      <i class="fa fa-eye">
+                      </i>
+                      View
+                    </a>
+                    <a class="btn btn-success btn-sm" href="" ng-click="selectUser(users)">
+                      <i class="fa fa-pencil">
+                      </i>
+                      Edit
+                    </a>
+                    <a class="btn btn-danger btn-sm" href="" ng-click="selectUser2(users)">
+                      <i class="fa fa-trash">
+                      </i>
+                      Delete
+                    </a> -->
+                    <div class="btn-group btn-group-sm">
+                      <button type="button" class="btn btn-info " ng-click="selectUser(users)"><i class="fa fa-eye"></i></button>
+                      <button type="button" class="btn btn-success " ng-click="selectUser(users)"><i class="fa fa-pencil"></i></button>
+                      <button type="button" class="btn btn-danger" ng-click="selectUser2(users)"><i class="fa fa-trash"></i></button>
+                  </div>
+                  </td>
+                  <!-- <td>USA</td> -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="display: none;" id="buyerInfo">
+  <br>
+  <!-- &nbsp;&nbsp;&nbsp;<button type="button" id="backShow" class="btn-danger fas fa-arrow-circle-left"
+    ng-click="showBuyerBack()">Back</button> -->
+  &nbsp;&nbsp;&nbsp; <a class="btn btn-danger btn-sm" id="backShow" href="#/buyersInfo" ng-click="showBuyerBack()">
+    <i class="fa fa-arrow-circle-left">
+    </i>
+    Back
+  </a>
+  <!-- <button type="button" id="print" ng-click="print()">Print this page</button> -->
+  <!-- <button type="button" id="print" class=" btn-success fas fa-print" style="float: right;"
+    ng-click="print()">Print</button> -->
+
+  <a class="btn btn-success btn-sm" id="print" style="float: right;" href="#/buyersInfo" ng-click="print()">
+    <i class="fa fa-print">
+    </i>
+    Print
+  </a>
+  <br>
+  <h2 style="text-align:center;">&nbsp;&nbsp;Buyer Information</h2>
+  <br>
+  <div class="container-fluid">
+
+    <div class="row invoice-info">
+      <div class="col-sm-8 invoice-col">
+        <i>Complete Name (Firstname, Middlename, Surname, Suffices)</i>
+        <h4> <i> {{clickedUser.firstname}} {{clickedUser.middlename}} {{clickedUser.surname}} {{clickedUser.suffices}}</i></h4> <br>
+        <!-- <b>Middlename:</b><i> {{clickedUser.middlename}}</i><br>
+        <b>Sur name:</b> <i> {{clickedUser.surname}}</i> <br>
+        <b>Suffices:</b> <i> {{clickedUser.suffices}}</i><br> -->
+      </div>
+      <br>
+      <!-- /.col -->
+      <!-- <div class="col-sm-4 invoice-col">
+        <h5><i>Contact Information</i></h5> 
+        <b>Cell phone No(s).:</b><i> {{clickedUser.cellphoneNo}}</i> <br>
+        <b>Telephone No.:</b><i> {{clickedUser.telephoneNo}}</i><br>
+        <b>Facebook Account Name:</b> <i> {{clickedUser.fbname}}</i> <br>
+        <b>Email Address:</b> <i> {{clickedUser.email}}</i><br>
+        <b>Complete Home Address(es):</b> <br>
+        <i>Address1:</i> {{clickedUser.address1}}<br>
+        <i>Address2:</i> {{clickedUser.address2}} <br>
+      </div> -->
+      <!-- /.col -->
+      <!-- <div class="col-sm-4 invoice-col">
+       <h5><i>Employment</i></h5> 
+        <b>Employer:</b><i> {{clickedUser.employer}}</i> <br>
+        <b>Name of Company:</b><i> {{clickedUser.companyName}}</i><br>
+        <b>Position:</b> <i> {{clickedUser.companyPosition}}</i> <br>
+        <b>No. of Years:</b> <i> {{clickedUser.numberOfYears}}</i><br>
+        <b>Monthly Income:</b> <i> {{clickedUser.monthlyIncome}}</i><br>
+      </div> -->
+      <!-- /.col -->
+    </div>
+
+    <br>
+
+
+    <div class="row invoice-info">
+      <div class="col-sm-4 invoice-col">
+        <h5><i>Business (if applicable)</i></h5> 
+        <b>Name of Business:</b><i> {{clickedUser.businessName}}</i> <br>
+        <b>Type of Business:</b><i> {{clickedUser.businessType}}</i><br>
+      </div>
+      <!-- /.col -->
+      <div class="col-sm-4 invoice-col">
+        <h5><i>Self-employed (if applicable)</i></h5> 
+        <b>Description:</b><i> {{clickedUser.descriptionSelfEmployed}}</i> <br>
+      </div>
+      <!-- /.col -->
+      <div class="col-sm-4 invoice-col">
+       <h5><i>Representative/AIF (if applicable)</i></h5> 
+        <b>Name of Rep/AIF:</b><i> {{clickedUser.representativeName}}</i> <br>
+        <b>Address:</b><i> {{clickedUser.representativeAdd}}</i><br>
+        <b>Occupation:</b> <i> {{clickedUser.representativeOccupation}}</i> <br>
+        <b>Relation to buyer:</b> <i> {{clickedUser.representativeRelation}}</i><br>
+      </div>
+      <!-- /.col -->
+    </div>
+
+    <br>
+
+    <div class="row invoice-info">
+      <div class="col-sm-4 invoice-col">
+        <h5><i>Property Acquired Information</i></h5> 
+        <b>Project Name:</b><i> {{clickedUser.projectName}}</i> <br>
+        <b>Address:</b><i> {{clickedUser.projectAdd}}</i><br>
+        <b>Name of Head:</b> <i> {{clickedUser.nameOfHead}}</i> <br>
+        <b>Contact Number:</b> <i> {{clickedUser.nameHeadContactNo}}</i><br>
+      </div>
+      <!-- /.col -->
+      <div class="col-sm-4 invoice-col">
+        <h5><i>Type of Property</i></h5> 
+        <b>Type:</b><i> {{clickedUser.propertyType}}</i> <br>
+        <b>Lot Area:</b><i> {{clickedUser.lotArea}}</i><br>
+        <b>Floor Area:</b> <i> {{clickedUser.floorArea}}</i> <br>
+        <b>Block No.:</b> <i> {{clickedUser.blockNo}}</i><br>
+        <b>Lot No:</b> <i> {{clickedUser.lotNo}}</i><br>
+      </div>
+      <!-- /.col -->
+      <div class="col-sm-4 invoice-col">
+       <h5><i>Requirements (During Reservation)</i></h5> 
+        <!-- <b>Employer:</b><i> {{clickedUser.employer}}</i> <br>
+        <b>Name of Company:</b><i> {{clickedUser.companyName}}</i><br>
+        <b>Position:</b> <i> {{clickedUser.companyPosition}}</i> <br>
+        <b>No. of Years:</b> <i> {{clickedUser.numberOfYears}}</i><br>
+        <b>Monthly Income:</b> <i> {{clickedUser.monthlyIncome}}</i><br> -->
+      </div>
+      <!-- /.col -->
+    </div>
+
+    <!-- Fullname -->
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Fullname</h3>
+
+        <!-- <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+      </div> -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="">First Name</label>
+              <div class="">
+                <h5>
+                  <p><i id="viewfName">Firstname: {{clickedUser.firstname}}</i></p>
+                </h5>
+              </div>
+            </div>
+            <!-- /.form-group -->
+
+            <div class="form-group">
+              <label class="">Middle Name</label>
+              <div class="0">
+                <h5>
+                  <p><i ng-model="clickedUser.middlename" id="viewmName"></i></p>
+                </h5>
+              </div>
+            </div>
+
+            <!-- /.form-group -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="">Sur Name</label>
+              <div class="0">
+                <h5>
+                  <p><i ng-model="clickedUser.surname" id="viewsurName"></i></p>
+                </h5>
+              </div>
+            </div>
+            <!-- /.form-group -->
+            <div class="form-group">
+              <label class="">Suffices</label>
+              <div class="0">
+                <h5>
+                  <p><i ng-model="clickedUser.suffices" id="viewsufName"></i></p>
+                </h5>
+              </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+      </div>
+
+    </div>
+    <!-- /.card -->
+
+    <!-- Contact Information -->
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Contact Information</h3>
+
+        <div class="card-tools">
+          <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button> -->
+        </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="">Cell phone No(s).</label>
+              <div class="0">
+                <h5>
+                  <p><i ng-model="clickedUser.cellphoneNo" id="viewcellNo"></i></p>
+                </h5>
+              </div>
+            </div>
+
+            <!-- /.form-group -->
+            <div class="form-group">
+              <label class="">Telephone No.</label>
+              <div class="0">
+                <h5>
+                  <p><i ng-model="clickedUser.telephoneNo" id="viewtelNo"></i></p>
+                </h5>
+              </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="">Facebook Account Name</label>
+              <div class="0">
+                <h5>
+                  <p><i ng-model="clickedUser.fbname" id="viewfbName"></i></p>
+                </h5>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="">Email Address</label>
+              <div class="0">
+                <h5>
+                  <p><i ng-model="clickedUser.email" id="viewemailAdd"></i></p>
+                </h5>
+              </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+
+
+          <!-- /.col -->
+        </div>
+        <div class="form-group">
+          <label class="">Complete Home Address(es)</label>
+          <div class="0">
+            <h5>
+              <p><i ng-model="clickedUser.address1" id="viewadd1"></i></p>
+            </h5>
+          </div>
+          <br>
+          <h5>
+            <p><i ng-model="clickedUser.address2" id="viewadd2"></i></p>
+          </h5>
+        </div>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+
+  <!-- Employment -->
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Employment</h3>
+
+      <div class="card-tools">
+        <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button> -->
+      </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="">Employer</label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.employer" id="viewemployer"></i></p>
+              </h5>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="">Name of Company</label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.companyName" id="viewcompanyName"></i></p>
+              </h5>
+            </div>
+          </div>
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="">Position</label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.companyPosition" id="viewposition"></i></p>
+              </h5>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="">No. of Years</label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.numberOfYears" id="viewnoOfYears"></i></p>
+              </h5>
+            </div>
+          </div>
+          <!-- /.form-group -->
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="">Monthly Income</label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.monthlyIncome" id="viewmonthlyIncome"></i></p>
+              </h5>
+            </div>
+          </div>
+          <!-- /.form-group -->
+        </div>
+
+
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+
+  <!-- Business -->
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Business (if applicable)</h3>
+
+      <div class="card-tools">
+        <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button> -->
+      </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="">Name of Business</label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.businessName" id="viewbusinessName"></i></p>
+              </h5>
+            </div>
+          </div>
+
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="">Type of Business</label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.businessType" id="viewbusinessType"></i></p>
+              </h5>
+            </div>
+          </div>
+          <!-- /.form-group -->
+        </div>
+
+
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+
+  <!-- Self-employed -->
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Self-employed (if applicable)</h3>
+
+      <div class="card-tools">
+        <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button> -->
+      </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Description</label>
+            <h5>
+              <p><i ng-model="clickedUser.descriptionSelfEmployed" id="viewdescripSelfEmployed"></i></p>
+            </h5>
+          </div>
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+
+
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+
+  <!-- Business -->
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Representative/AIF (if applicable)</h3>
+
+      <div class="card-tools">
+        <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button> -->
+      </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="">Name of Rep/AIF </label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.representativeName" id="viewrepName"></i></p>
+              </h5>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="">Address</label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.representativeAdd" id="viewrepAdd"></i></p>
+              </h5>
+            </div>
+          </div>
+
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="">Occupation</label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.representativeOccupation" id="viewrepJob"></i></p>
+              </h5>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="">Relation to buyer</label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.representativeRelation" id="viewrepRelation"></i></p>
+              </h5>
+            </div>
+          </div>
+          <!-- /.form-group -->
+        </div>
+
+
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- <button type="submit" id="addBuyerSave" class="btn btn-danger" style="float: right;">Submit</button> -->
+  </div>
+
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Property Acquired Information</h3>
+
+      <div class="card-tools">
+        <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button> -->
+      </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="">Project Name </label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.projectName" id="viewProjName"></i></p>
+              </h5>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="">Address </label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.projectAdd" id="viewProjName"></i></p>
+              </h5>
+            </div>
+          </div>
+
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="">Name of Head</label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.nameOfHead" id="viewProjAdd"></i></p>
+              </h5>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="">Contact Number</label>
+            <div class="0">
+              <h5>
+                <p><i ng-model="clickedUser.nameHeadContactNo" id="viewProjAdd"></i></p>
+              </h5>
+            </div>
+          </div>
+
+          <!-- /.form-group -->
+        </div>
+
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- <button type="submit" id="addBuyerSave" class="btn btn-danger" style="float: right;">Submit</button> -->
+  </div>
+
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Type of Property</h3>
+
+      <div class="card-tools">
+        <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button> -->
+      </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <h5>
+              <p><i id="viewPropertyType"></i></p>
+            </h5>
+          </div>
+
+          <div class="form-group">
+            <label class="">Lot Area</label>
+            <div class="0">
+              <h5>
+                <p><i id="viewLotArea"></i></p>
+              </h5>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="">Floor Area</label>
+            <div class="0">
+              <h5>
+                <p><i id="viewFloorArea"></i></p>
+              </h5>
+            </div>
+          </div>
+
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="">Block No.</label>
+            <div class="0">
+              <h5>
+                <p><i id="ViewBlockNo"></i></p>
+              </h5>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="">Lot No</label>
+            <div class="0">
+              <h5>
+                <p><i id="viewLotNo"></i></p>
+              </h5>
+            </div>
+          </div>
+          <!-- /.form-group -->
+        </div>
+
+
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+
+    <!-- <button type="submit" id="addBuyerSave" class="btn btn-danger" style="float: right;">Submit</button> -->
+  </div>
+
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Requirements (During Reservation)</h3>
+
+      <div class="card-tools">
+        <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button> -->
+      </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" type="checkbox" id="customCheckbox1" value="option1" disabled>
+              <label for="customCheckbox1" class="custom-control-label">Requirements 1</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" type="checkbox" id="customCheckbox2" disabled>
+              <label for="customCheckbox2" class="custom-control-label">Requirements 2</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" type="checkbox" id="customCheckbox3" disabled>
+              <label for="customCheckbox3" class="custom-control-label">Requirements 3</label>
+            </div>
+          </div>
+
+
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" type="checkbox" id="customCheckbox4" value="option1" disabled>
+              <label for="customCheckbox4" class="custom-control-label">Requirements 4</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" type="checkbox" id="customCheckbox5" disabled>
+              <label for="customCheckbox5" class="custom-control-label">Requirements 5</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" type="checkbox" id="customCheckbox6" disabled>
+              <label for="customCheckbox6" class="custom-control-label">Requirements 6</label>
+            </div>
+          </div>
+          <!-- /.form-group -->
+        </div>
+
+
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+
+    <!-- <button type="submit" id="addBuyerSave" class="btn btn-danger" style="float: right;">Submit</button> -->
+  </div>
+  <!-- <button type="submit" id="addBuyerSave" class="btn btn-danger" style="float: right;">Submit</button> -->
+</div>
+
+
+</div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit User</h4>
+        <button type="button" ng-click="close()">&times;</button>
+
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="">Fullname</label>
+          <div class="">
+            <input type="text" class="form-control" ng-model="clickedUser.fullname" id="editFullname">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="">Email</label>
+          <div class="0">
+            <input type="text" class="form-control" ng-model="clickedUser.email" id="editEmail">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="">ID</label>
+          <div class="0">
+            <input type="text" class="form-control" ng-model="clickedUser.id" id="editSalesID">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="">Sales</label>
+          <div class="0">
+            <input type="text" class="form-control" ng-model="clickedUser.sales" id="editSalesID">
+          </div>
+        </div>
+        <!--     
+                <div class="form-group">
+                    <label class="form-control">Role</label>
+                    <div class="">
+                        <select id="editRole">
+                            <option value="ordinary">Ordinary</option>
+                            <option value="super">Super User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+
+
+                    </div>
+                </div> -->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn btn-info" data-dismiss="modal" ng-click="updateUser()">Save</button>
+        <button type="button" class="btn btn btn-danger" ng-click="close()">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="modal fade" id="myModal2" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Delete User</h4>
+        <button type="button" ng-click="close2()">&times;</button>
+
+      </div>
+      <div class="modal-body">
+
+        <p>Do you want to delete <strong style="color: red;">{{clickedUser.fullname}}</strong> information?</p>
+        <!-- <p id="deleteUser" ></p> -->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" ng-click="deleteUser()">Yes</button>
+        <button type="button" class="btn btn-info" ng-click="close2()">No</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- The Modal -->
+<div id="myModalasdsd" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Edit Client</h4>
+      <button type="button" ng-click="close()">&times;</button>
+
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="">Email</label>
+        <div class="">
+          <input type="text" class="form-control" id="editEmail" ng-value="newEmail">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="">Company Name</label>
+        <div class="0">
+          <input type="text" class="form-control" id="editcompanyName" ng-value="newCompanyName">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="">Mailing Address</label>
+        <div class="">
+          <input type="text" class="form-control" id="editMailingAdd" ng-value="newMailingAdd">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="">Phone Number</label>
+        <div class="">
+          <input type="text" class="form-control" id="editPhoneNo" ng-value="newPhoneNo">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="">FirstName</label>
+        <div class="">
+          <input type="text" class="form-control" id="editFirstname" ng-value="newFirstname">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="">Lastname</label>
+        <div class="">
+          <input type="text" class="form-control" id="editLastname" ng-value="newLastname">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="">Title</label>
+        <div class="">
+          <input type="text" class="form-control" id="editTitle" ng-value="newTitle">
+        </div>
+      </div>
+
+
+      <!-- <div class="form-group">
+                <label class="">Role</label>
+                <div class="">
+                    <select id="editRole">
+                        <option value="ordinary">Ordinary</option>
+                        <option value="super">Super User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+
+
+                </div>
+            </div> -->
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn btn-info" data-dismiss="modal" ng-click="updateUser()">Save</button>
+      <button type="button" class="btn btn btn-danger" ng-click="close()">Cancel</button>
+    </div>
+  </div>
+
+
+</div>
+
+
+<!-- The Modal -->
+<div id="myModalasdsds" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Are you sure?</h4>
+      <button type="button" ng-click="close2()">&times;</button>
+
+    </div>
+    <div class="modal-body">
+
+      <p>You want to delete <strong id="deleteUser" style="color: red;"></strong> information...</p>
+      <!-- <p id="deleteUser" ></p> -->
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" ng-click="deleteUser()">Yes</button>
+      <button type="button" class="btn btn-info" ng-click="close2()">No</button>
+    </div>
+  </div>
+
+
+</div>
+
+
+<!-- latest jquery-->
+<script src="assets/js/jquery-3.5.1.min.js"></script>
+<!-- Bootstrap js-->
+<script src="assets/js/bootstrap/popper.min.js"></script>
+<script src="assets/js/bootstrap/bootstrap.js"></script>
+<!-- feather icon js-->
+<script src="assets/js/icons/feather-icon/feather.min.js"></script>
+<script src="assets/js/icons/feather-icon/feather-icon.js"></script>
+<!-- Sidebar jquery-->
+<!-- <script src="assets/js/sidebar-menu.js"></script> -->
+<script src="assets/js/config.js"></script>
+<!-- Plugins JS start-->
+<script src="assets/js/datatable/datatables/jquery.dataTables2.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/dataTables.buttons.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/jszip.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/buttons.colVis.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/pdfmake.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/vfs_fonts.js"></script>
+<script src="assets/js/datatable/datatable-extension/dataTables.autoFill.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/dataTables.select.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/buttons.bootstrap4.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/buttons.html5.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/buttons.print.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/dataTables.bootstrap4.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/dataTables.responsive.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/responsive.bootstrap4.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/dataTables.keyTable.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/dataTables.colReorder.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/dataTables.fixedHeader.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/dataTables.rowReorder.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/dataTables.scroller.min.js"></script>
+<script src="assets/js/datatable/datatable-extension/custom2.js"></script>
+<script src="assets/js/tooltip-init.js"></script>
+<!-- Plugins JS Ends-->
+<!-- Theme js-->
+<script src="assets/js/script.js"></script>
+<script src="assets/js/theme-customizer/customizer.js"></script>

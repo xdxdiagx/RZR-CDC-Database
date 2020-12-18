@@ -1,0 +1,1045 @@
+<div ng-controller="NewUsersCtrl">
+  <br>
+  <h5> &nbsp; &nbsp; &nbsp;Add Buyer</h5>
+  <div class="text-danger wrapper text-center" id="messages"></div>
+  <div class="text-success wrapper text-center" id="success"></div>
+  <br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Fullname</h4>
+
+          </div>
+          <div class="card-body">
+            <form id="newAgent">
+
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="fName">First Name</label>
+                  <input class="form-control" ng-model="fName" id="fName" type="text" placeholder="Juan" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="mName">Middle Name</label>
+                  <input class="form-control" ng-model="mName" id="mName" type="text" placeholder="Gonzales"
+                    required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="surName">Sur Name</label>
+                  <input class="form-control" ng-model="surName" id="surName" type="text" placeholder="Dela Cruz"
+                    required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="sufName">Suffices</label>
+                  <input class="form-control" ng-model="sufName" id="sufName" type="text"
+                    placeholder="Jr., Atty., Dr., etc." required="">
+                </div>
+                <!-- <div class="col-md-4 mb-3">
+                  <label for="validationDefaultUsername">Username</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend2">@</span>
+                    </div>
+                    <input class="form-control" id="validationDefaultUsername" type="text" placeholder="Username"
+                      aria-describedby="inputGroupPrepend2" required="">
+                  </div>
+                </div> -->
+              </div>
+              <!-- <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label for="password">Password</label>
+                  <input class="form-control" id="password" type="password" placeholder="Password" required="">
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label for="confirmPass">Confirm Password</label>
+                  <input class="form-control" id="confirmPass" type="password" placeholder="Confirm Password"
+                    required="">
+                </div>
+              </div> -->
+              <!-- <br>
+              <button class="btn btn-primary" type="submit">Submit</button>
+              <input class="btn btn-light" type="reset" value="Clear"> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Contact Information</h4>
+
+          </div>
+          <div class="card-body">
+            <form id="newAgent">
+
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="cellNo">Cell phone No(s).</label>
+                  <input class="form-control" ng-model="cellNo" id="cellNo" type="text" placeholder="09******789"
+                    required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="telNo">Telephone No.</label>
+                  <input class="form-control" ng-model="telNo" id="telNo" type="text" placeholder="0254-207-8276"
+                    required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="fbName">Facebook Account Name</label>
+                  <input class="form-control" ng-model="fbName" id="fbName" type="text" placeholder="Juan Dela Cruz"
+                    required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="emailAdd">Email Address</label>
+                  <input class="form-control" ng-model="emailAdd" id="emailAdd" type="text"
+                    placeholder="juandelacruz@gmail.com" required="">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label for="add1">Complete Home Address(es)</label>
+                  <input class="form-control" ng-model="add1" id="add1" type="text" placeholder="Address 1" required="">
+                </div>
+                <div class="col-md-12 mb-3">
+                  <!-- <label for="add2">Telephone No.</label> -->
+                  <input class="form-control" ng-model="add2" id="add2" type="text" placeholder="Address 2" required="">
+                </div>
+              </div>
+              <br>
+              <!-- <button class="btn btn-primary" type="submit">Submit</button>
+              <input class="btn btn-light" type="reset" value="Clear"> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Source of Income</h4>
+
+          </div>
+          <div class="card-body">
+            <form id="newAgent">
+              <div class="card-title">
+                <h5>Employment</h5>
+
+              </div>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="employer">Employer</label>
+                  <input class="form-control" ng-model="employer" id="employer" type="text" placeholder="Jeff Bazoos"
+                    required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="companyName">Name of Company</label>
+                  <input class="form-control" ng-model="companyName" id="companyName" type="text" placeholder="Amazon"
+                    required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="position">Position</label>
+                  <input class="form-control" ng-model="position" id="position" type="text" placeholder="Sales Agent"
+                    required="">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="noOfYears">No. of Years</label>
+                  <input class="form-control" ng-model="noOfYears" id="noOfYears" type="text" placeholder="5"
+                    required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="monthlyIncome">Monthly Salary</label>
+                  <input class="form-control" ng-model="monthlyIncome" id="monthlyIncome" type="text"
+                    placeholder="20,000" required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="allowance">Allowance/Bonus</label>
+                  <input class="form-control" ng-model="allowance" id="allowance" type="text" placeholder="5000"
+                    required="">
+                </div>
+              </div>
+              <br>
+              <div class="card-title">
+                <h5>Business/Company Owner </h5>
+              </div>
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="businessName">Name of Business</label>
+                  <input class="form-control" ng-model="businessName" id="businessName" type="text"
+                    placeholder="My Business" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="businessType">Type of Business</label>
+                  <input class="form-control" ng-model="businessType" id="businessType" type="text"
+                    placeholder="Trading, Services, etc." required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="registration">Registration</label>
+                  <select class="custom-select form-control" id="registration">
+                    <option selected="">Select</option>
+                    <option value="Single Proprietor">Single Proprietor</option>
+                    <option value="Partnership">Partnership</option>
+                    <option value="Corporation">Corporation</option>
+                  </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="monthlyGrossIncome">Mothly Gross Income</label>
+                  <input class="form-control" ng-model="monthlyGrossIncome" id="monthlyGrossIncome" type="text"
+                    placeholder="30,000" required="">
+                </div>
+              </div>
+              <br>
+              <div class="card-title">
+                <h5>Self-employed </h5>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="descripSelfEmployed">Description</label>
+                  <textarea class="form-control" id="descripSelfEmployed" rows="3"
+                    placeholder="Enter your description here"></textarea>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="monthlyGrossIncome2">Monthly Gross Income</label>
+                  <input class="form-control" ng-model="monthlyGrossIncome2" id="monthlyGrossIncome2" type="text"
+                    placeholder="30,000" required="">
+                </div>
+              </div>
+              <br>
+              <div class="card-title">
+                <h5>Other Sources </h5>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="otherSources">Name</label>
+                  <input class="form-control" ng-model="otherSources" id="otherSources" type="text"
+                    placeholder="Remittances, Pension, Investment, etc" required="">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="monthlyGrossIncome3">Monthly Gross Income</label>
+                  <input class="form-control" ng-model="monthlyGrossIncome3" id="monthlyGrossIncome3" type="text"
+                    placeholder="30,000" required="">
+                </div>
+              </div>
+
+              <br>
+            </form>
+            <!-- <button class="btn btn-primary" type="submit">Submit</button>
+            <input class="btn btn-light" type="reset" value="Clear"> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Representative/AIF (if applicable)</h4>
+
+          </div>
+          <div class="card-body">
+            <form id="newAgent">
+
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="repName">Name of Rep/AIF </label>
+                  <input class="form-control" ng-model="repName" id="repName" type="text" placeholder="Pedro Gonzales"
+                    required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="repAdd">Address</label>
+                  <input class="form-control" ng-model="repAdd" id="repAdd" type="text"
+                    placeholder="Street/Barangay/Province" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="repJob">Occupation</label>
+                  <input class="form-control" ng-model="repJob" id="repJob" type="text" placeholder="Manager"
+                    required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="repRelation">Relation to buyer</label>
+                  <input class="form-control" ng-model="repRelation" id="repRelation" type="text" placeholder="Cousin"
+                    required="">
+                </div>
+              </div>
+              <!-- <button class="btn btn-primary" type="submit">Submit</button>
+              <input class="btn btn-light" type="reset" value="Clear"> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Property Acquired Information</h4>
+
+          </div>
+          <div class="card-body">
+            <form id="newAgent">
+
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="projName">Project Name </label>
+                  <select class="custom-select form-control" id="projName">
+                    <option selected="">Select</option>
+                    <option value="Camella">Camella</option>
+                    <option value="Parkview">Parkview</option>
+                    <option value="Imperial">Imperial</option>
+                  </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="projAdd">Address</label>
+                  <input class="form-control" ng-model="projAdd" id="projAdd" type="text"
+                    placeholder="Street/Barangay/Province" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="nameHead">Name of Head</label>
+                  <input class="form-control" ng-model="nameHead" id="nameHead" type="text" placeholder="Juan Dela Cruz"
+                    required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="nameHeadContactNo">Contact Number</label>
+                  <input class="form-control" ng-model="nameHeadContactNo" id="nameHeadContactNo" type="text"
+                    placeholder="09******431" required="">
+                </div>
+              </div>
+              <!-- <button class="btn btn-primary" type="submit">Submit</button>
+              <input class="btn btn-light" type="reset" value="Clear"> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Type of Property</h4>
+
+          </div>
+          <div class="card-body">
+            <form id="newAgent">
+
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <div class="form-group m-t-15 m-checkbox-inline mb-0 custom-radio-ml">
+                    <div class="radio radio-primary">
+                      <input id="radioinline1" type="radio" name="radio1" value="option1">
+                      <label class="mb-0" for="radioinline1">House & Lot</span></label>
+                    </div>
+                    <div class="radio radio-primary">
+                      <input id="radioinline2" type="radio" name="radio1" value="option1">
+                      <label class="mb-0" for="radioinline2">Townhouse 1 sty & 2 sty</span></label>
+                    </div>
+                    <div class="radio radio-primary">
+                      <input id="radioinline3" type="radio" name="radio1" value="option1">
+                      <label class="mb-0" for="radioinline3">Condominium</span></label>
+                    </div>
+                    <div class="radio radio-primary">
+                      <input id="radioinline4" type="radio" name="radio1" value="option1">
+                      <label class="mb-0" for="radioinline4">Lot Only (Res, Comm, Agri)</span></label>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="lotArea">Lot Area </label>
+                  <input class="form-control" ng-model="lotArea" id="lotArea" type="text" placeholder="160 SQ M"
+                    required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="floorArea">Floor Area</label>
+                  <input class="form-control" ng-model="floorArea" id="floorArea" type="text" placeholder="101 SQ M"
+                    required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="blkNo">Block No.</label>
+                  <input class="form-control" ng-model="blkNo" id="blkNo" type="text" placeholder="1" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="lotNo">Lot No.</label>
+                  <input class="form-control" ng-model="lotNo" id="lotNo" type="text" placeholder="7" required="">
+                </div>
+              </div>
+              <!-- <button class="btn btn-primary" type="submit">Submit</button>
+              <input class="btn btn-light" type="reset" value="Clear"> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Documentation (Requirements)</h4>
+
+          </div>
+          <div class="card-body">
+            <form id="newAgent">
+              <div class="card-title">
+                <h5>During Reservation</h5>
+
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox1" type="checkbox">
+                    <label class="mb-0" for="checkbox1">Requirement 1</label>
+                  </div>
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox2" type="checkbox">
+                    <label class="mb-0" for="checkbox2">Requirement 2</label>
+                  </div>
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox3" type="checkbox">
+                    <label class="mb-0" for="checkbox3">Requirement 3</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox4" type="checkbox">
+                    <label class="mb-0" for="checkbox4">Requirement 4</label>
+                  </div>
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox5" type="checkbox">
+                    <label class="mb-0" for="checkbox5">Requirement 5</label>
+                  </div>
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox6" type="checkbox">
+                    <label class="mb-0" for="checkbox6">Requirement 6</label>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="card-title">
+                <h5>After Reservation </h5>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox7" type="checkbox">
+                    <label class="mb-0" for="checkbox7">Requirement 1</label>
+                  </div>
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox8" type="checkbox">
+                    <label class="mb-0" for="checkbox8">Requirement 2</label>
+                  </div>
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox9" type="checkbox">
+                    <label class="mb-0" for="checkbox9">Requirement 3</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox10" type="checkbox">
+                    <label class="mb-0" for="checkbox10">Requirement 4</label>
+                  </div>
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox11" type="checkbox">
+                    <label class="mb-0" for="checkbox11">Requirement 5</label>
+                  </div>
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox12" type="checkbox">
+                    <label class="mb-0" for="checkbox12">Requirement 6</label>
+                  </div>
+                </div>
+                <br>
+                <div class="col-md-12 mb-3">
+                  <label for="complianceStatus">Compliance Status </label>
+                  <select class="custom-select form-control" id="complianceStatus">
+                    <option selected="">Select</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Incomplete">Incomplete</option>
+                    <!-- <option value="Corporation">Corporation</option> -->
+                  </select>
+                </div>
+              </div>
+              <br>
+              <div class="card-title">
+                <h5>Financing </h5>
+              </div>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <div class="form-group m-t-15 custom-radio-ml">
+                    <div class="radio radio-primary">
+                      <input id="radio1" type="radio" name="radio1" value="option1" checked="">
+                      <label for="radio1">Pag-ibig</span></label>
+                    </div>
+                    <div class="radio radio-primary">
+                      <input id="radio2" type="radio" name="radio1" value="option1">
+                      <label for="radio2">Bank</label>
+                    </div>
+                    <div class="radio radio-primary">
+                      <input id="radio3" type="radio" name="radio1" value="option1">
+                      <label for="radio3">In-House</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox13" type="checkbox">
+                    <label class="mb-0" for="checkbox13">Requirement 1</label>
+                  </div>
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox14" type="checkbox">
+                    <label class="mb-0" for="checkbox14">Requirement 2</label>
+                  </div>
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox15" type="checkbox">
+                    <label class="mb-0" for="checkbox15">Requirement 3</label>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox16" type="checkbox">
+                    <label class="mb-0" for="checkbox16">Requirement 4</label>
+                  </div>
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox17" type="checkbox">
+                    <label class="mb-0" for="checkbox17">Requirement 5</label>
+                  </div>
+                  <div class="checkbox checkbox-solid-dark">
+                    <input id="checkbox18" type="checkbox">
+                    <label class="mb-0" for="checkbox18">Requirement 6</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <!-- <button class="btn btn-primary" type="submit">Submit</button> -->
+            <!-- <input class="btn btn-light" type="reset" value="Clear"> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Price, Terms of Payment, & Schedule of Payment</h4>
+
+          </div>
+          <div class="card-body">
+            <form id="newAgent">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="sellingPrice">Selling Price </label>
+                  <input class="form-control" ng-model="sellingPrice" id="sellingPrice" type="text"
+                    placeholder="4,000,000" required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="contractPrice">Contract Price</label>
+                  <input class="form-control" ng-model="contractPrice" id="contractPrice" type="text"
+                    placeholder="4,000,000" required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="commissionBase">Commission Base</label>
+                  <input class="form-control" ng-model="commissionBase" id="commissionBase" type="text"
+                    placeholder="3,000,000" required="">
+                </div>
+              </div>
+              <br>
+
+              <div class="card-title">
+                <h5>Terms of Payment </h5>
+              </div>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="DP">Downpayment (%)</label>
+                  <input class="form-control" ng-model="DP" id="DP" type="text" placeholder="10" required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="payment">Payment</label>
+                  <select class="custom-select form-control" id="payment" ng-change="myFunc()" ng-model="myValue">
+                    <!-- <option selected="">Select</option> -->
+                    <option value="Cash">Cash</option>
+                    <option value="Monthly Installment">Monthly Installment</option>
+                  </select>
+                </div>
+                <div style="display: block;" id="cash" class="col-md-4 mb-3">
+                  <label for="cashPayable">Payable in Days</label>
+                  <input class="form-control" ng-model="cashPayable" id="cashPayable" type="text" placeholder="30"
+                    required="">
+                </div>
+                <div style="display: none;" id="monthly" class="col-md-4 mb-3">
+                  <label for="monthlyPayable">Payable in Days</label>
+                  <input class="form-control" ng-model="monthlyPayable" id="monthlyPayable" type="text" placeholder="30"
+                    required="">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="balance">% Balance/Loan Value</label>
+                  <input class="form-control" ng-model="balance" id="balance" type="text" placeholder="90" required="">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="noOfYearToPay">No. of Year to Pay</label>
+                  <input class="form-control" ng-model="noOfYearToPay" id="noOfYearToPay" type="text" placeholder="10"
+                    required="">
+                </div>
+              </div>
+              <br>
+              <!-- <button class="btn btn-primary" type="button" ng-click="addBuyerSubmit()" style="float: right;">Submit</button> -->
+              <!-- <input class="btn btn-light" type="reset" value="Clear"> -->
+            </form>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Financing Mode</h4>
+
+          </div>
+          <div class="card-body">
+            <form id="newAgent">
+
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <div class="form-group m-t-15 m-checkbox-inline mb-0 custom-radio-ml">
+                    <div class="radio radio-primary">
+                      <input id="radioinline5" type="radio" name="radio1" value="option1">
+                      <label class="mb-0" for="radioinline5">Pag-ibig</span></label>
+                    </div>
+                    <div class="radio radio-primary">
+                      <input id="radioinline6" type="radio" name="radio1" value="option1">
+                      <label class="mb-0" for="radioinline6">Bank</span></label>
+                    </div>
+                    <div class="radio radio-primary">
+                      <input id="radioinline7" type="radio" name="radio1" value="option1">
+                      <label class="mb-0" for="radioinline7">In-House</span></label>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="interestRate">Interest Rate (%)</label>
+                  <input class="form-control" ng-model="interestRate" id="interestRate" type="text" placeholder="3"
+                    required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="noOfYearToPayFinancing">No. of Years to Pay</label>
+                  <input class="form-control" ng-model="noOfYearToPayFinancing" id="noOfYearToPayFinancing" type="text"
+                    placeholder="30" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="fixingPeriod">Fixing Period</label>
+                  <input class="form-control" ng-model="fixingPeriod" id="fixingPeriod" type="text" placeholder="5"
+                    required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="factorRate">Factor Rate</label>
+                  <input class="form-control" ng-model="factorRate" id="factorRate" type="text" placeholder=".00987"
+                    required="">
+                </div>
+                </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="monthlyAmortization">Monthly Amortization</label>
+                  <input class="form-control" ng-model="monthlyAmortization" id="monthlyAmortization" type="text"
+                    placeholder="20,000" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="ndiFactor">NDI Factor</label>
+                  <select class="custom-select form-control" id="ndiFactor" ng-change="NDIFactor()" ng-model="ndiFactor">
+                    <!-- <option selected="">Select</option> -->
+                    <option value=".30">.30</option>
+                    <option value=".35">.35</option>
+                    <option value=".40">.40</option>
+                  </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="buyersNetDisposableIncome">Buyers Net Disposable Income</label>
+                  <input class="form-control" ng-model="buyersNetDisposableIncome" id="buyersNetDisposableIncome"
+                    type="text" placeholder="100,000" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="buyersGrossIncome">Buyers Gross Income</label>
+                  <input class="form-control" ng-model="buyersGrossIncome" id="lobuyersGrossIncometNo" type="text"
+                    placeholder="100,001" required="">
+                </div>
+              </div>
+              <!-- <button class="btn btn-primary" type="button" ng-click="addBuyerSubmit()"
+                style="float: right;">Submit</button> -->
+              <!-- <input class="btn btn-light" type="reset" value="Clear"> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Account Status</h4>
+
+          </div>
+          <div class="card-body">
+            <form id="newAgent">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="payment">Status</label>
+                  <select class="custom-select form-control" id="status" ng-change="myFunc2()" ng-model="myValue2">
+                    <!-- <option selected="">Select</option> -->
+                    <option value="New Reservation">New Reservation</option>
+                    <option value="Cash Downpayment">Cash Downpayment</option>
+                    <option value="DP Installment">DP Installment</option>
+                    <option value="Loan Processing">Loan Processing</option>
+                    <option value="Release">Loan Take Out/Release</option>
+                  </select>
+                </div>
+                <div style="display: none;" id="dpInstallment" class="col-md-4 mb-3">
+                  <label for="DPInstallmentStatus">DP Installment Status</label>
+                  <select class="custom-select form-control" id="DPInstallmentStatus" ng-change="myFunc3()"
+                    ng-model="myValue3">
+                    <!-- <option selected="">Select</option> -->
+                    <option value="Updated">Updated</option>
+                    <option value="Deliquent">Deliquent</option>
+                    <option value="Cancelled">Cancelled</option>
+                    <option value="Back-out">Back-out</option>
+                  </select>
+                </div>
+                <div style="display: none;" id="lpStatus" class="col-md-4 mb-3">
+                  <label for="LPStatus">Loan Processing Status</label>
+                  <select class="custom-select form-control" id="LPStatus" ng-change="myFunc4()" ng-model="myValue4">
+                    <!-- <option selected="">Select</option> -->
+                    <option value="Approved">Approved</option>
+                    <option value="Disapprove">Disapprove</option>
+                  </select>
+                </div>
+
+                <div style="display: none;" id="reason" class="col-md-4 mb-3">
+                  <label for="reason">Reason</label>
+                  <textarea class="form-control" id="reason" rows="3"
+                    placeholder="Enter your description here"></textarea>
+                </div>
+              </div>
+
+              <div class="row">
+
+              </div>
+              <!-- <button class="btn btn-primary" type="button" ng-click="addBuyerSubmit()" style="float: right;">Submit</button> -->
+              <!-- <input class="btn btn-light" type="reset" value="Clear"> -->
+            </form>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Commission Schedule, Spread Sheet & Payment Voucher</h4>
+
+          </div>
+          <div class="card-body">
+            <form id="newAgent">
+              <div class="card-title">
+                <h4>Agency</h4>
+              </div>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="commissionBase2">Commission Base </label>
+                  <input class="form-control" ng-model="commissionBase2" id="commissionBase2" type="text"
+                    placeholder="5,000,000" required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="agencyRate">Project Based Agency Rates</label>
+                  <select class="custom-select form-control" id="agencyRate" ng-change="projectBasedRate()" ng-model="myValue5">
+                    <option value="3.5">3.5%</option>
+                    <option value="5.0">5.0%</option>
+                    <option value="6">6%</option>
+                    <option value="6.5">6.5%</option>
+                  </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="agencyTotal">Agency Total </label>
+                  <input class="form-control" ng-model="agencyTotal" id="agencyTotal" type="text"
+                    placeholder="70,000" required="">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="agencyWitholdingTax">Witholding Tax </label>
+                  <input class="form-control" ng-model="agencyWitholdingTax" id="agencyWitholdingTax" type="text"
+                    placeholder="10,000" required="">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="agencyBrokersTax">Brokers Tax </label>
+                  <input class="form-control" ng-model="agencyBrokersTax" id="agencyBrokersTax" type="text"
+                    placeholder="2,000" required="">
+                </div>
+              </div>
+              <br>
+
+              <div class="card-title">
+                <h4>Salesperson</h4>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="nameOfSalesperson">Name of Salesperson</label>
+                  <input class="form-control" ng-model="nameOfSalesperson" id="nameOfSalesperson" type="text" placeholder="Juan Dela Cruz" required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="salesperosonID">Salesperson ID</label>
+                  <input class="form-control" ng-model="salesperosonID" id="salesperosonID" type="text" placeholder="010101" required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="roleRank">Role & Rank</label>
+                  <select class="custom-select form-control" id="roleRank" ng-change="roleRank()" ng-model="roleAndRank">
+                    <!-- <option selected="">Select</option> -->
+                    <option value="RSP1">Referral Source Person 1 (RSP1)</option>
+                    <option value="RSP2">Referral Source Person 2 (RSP2) </option>
+                    <option value="SP1">Salesperson 1 (SP1) </option>
+                    <option value="SP2">Salesperson 2 (SP2) </option>
+                    <option value="SP3">Salesperson 3 (SP3) </option>
+                    <option value="SP4">Salesperson 4 (SP4) </option>
+                    <option value="SP5">Salesperson 5 (SP5) </option>
+                    <option value="SP6">Salesperson 6 (SP6) </option>
+                    <option value="SP7">Salesperson 7 (SP7) </option>
+                  </select>
+                </div>
+                <!-- <div class="col-md-3 mb-3">
+                  <label for="salespersonIncentive">Incentive</label>
+                  <input class="form-control" ng-model="salespersonIncentive" id="salespersonIncentive" type="text" placeholder="5,000" required="">
+                </div> -->
+              </div>
+
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="salespersonIncentive">Incentive</label>
+                  <input class="form-control" ng-model="salespersonIncentive" id="salespersonIncentive" type="text" placeholder="5,000" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="salesPersonCommisionRate">Comission Rate (%)</label>
+                  <input class="form-control" ng-model="salesPersonCommisionRate" id="salesPersonCommisionRate" type="text" placeholder="3.5" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="salespersonWitholdingTax">Witholding Tax</label>
+                  <input class="form-control" ng-model="salespersonWitholdingTax" id="salespersonWitholdingTax" type="text" placeholder="3,000" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="salespersonBrokersTax">Brokers Tax</label>
+                  <input class="form-control" ng-model="salespersonBrokersTax" id="salespersonBrokersTax" type="text" placeholder="900" required="">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="salespersonIncentive">Salesperson Total</label>
+                  <input class="form-control" ng-model="salespersonTotal" id="salespersonTotal" type="text" placeholder="105,000" required="">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="salesPersonCommisionRate">To Receive (after tax)</label>
+                  <input class="form-control" ng-model="salesPersonAfterTax" id="salesPersonAfterTax" type="text" placeholder="90,000" required="">
+                </div>
+              </div>
+              <br>
+
+              <div class="card-title">
+                <h4>Branch Manager</h4>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="nameOfBranchManager">Name of Branch Manager</label>
+                  <input class="form-control" ng-model="nameOfBranchManager" id="nameOfBranchManager" type="text" placeholder="Pedro Gonzales" required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="branchManagerID">Branch Manager ID</label>
+                  <input class="form-control" ng-model="branchManagerID" id="branchManagerID" type="text" placeholder="010101" required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="roleRank2">Role & Rank</label>
+                  <select class="custom-select form-control" id="roleRank2" ng-change="roleRank2()" ng-model="roleAndRank2">
+                    <!-- <option selected="">Select</option> -->
+                    <option value="BR8">Branch Manager 8 (BR8)</option>
+                    <option value="BR9">Branch Manager 9 (BR9) </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="branchManagerIncentive">Incentive</label>
+                  <input class="form-control" ng-model="branchManagerIncentive" id="branchManagerIncentive" type="text" placeholder="5,000" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="branchManagerCommisionRate">Comission Rate (%)</label>
+                  <input class="form-control" ng-model="branchManagerCommisionRate" id="branchManagerCommisionRate" type="text" placeholder="3.5" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="branchManagerWitholdingTax">Witholding Tax</label>
+                  <input class="form-control" ng-model="branchManagerWitholdingTax" id="branchManagerWitholdingTax" type="text" placeholder="5,000" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="branchManagerBrokersTax">Brokers Tax</label>
+                  <input class="form-control" ng-model="branchManagerBrokersTax" id="branchManagerBrokersTax" type="text" placeholder="1,300" required="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="salespersonIncentive">Branch Manager Total</label>
+                  <input class="form-control" ng-model="branchManagerTotal" id="branchManagerTotal" type="text" placeholder="105,000" required="">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="salesPersonCommisionRate">To Receive (after tax)</label>
+                  <input class="form-control" ng-model="branchManagerAfterTax" id="branchManagerAfterTax" type="text" placeholder="50,000" required="">
+                </div>
+              </div>
+              <br>
+
+              <div class="card-title">
+                <h4>Leader Broker</h4>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="nameOfleadBroker">Name of Lead Broker</label>
+                  <input class="form-control" ng-model="nameOfleadBroker" id="nameOfleadBroker" type="text" placeholder="Pedro Gonzales" required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="leadBrokerID">Lead Broker ID</label>
+                  <input class="form-control" ng-model="leadBrokerID" id="leadBrokerID" type="text" placeholder="010101" required="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="roleRank3">Role & Rank</label>
+                  <select class="custom-select form-control" id="roleRank3" ng-change="roleRank3()" ng-model="roleAndRank3">
+                    <!-- <option selected="">Select</option> -->
+                    <option value="LB10">lead Broker 8 (LB10)</option>
+                    <!-- <option value="BR9">Branch Manager 9 (BR9) </option> -->
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="leadBrokerIncentive">Incentive</label>
+                  <input class="form-control" ng-model="leadBrokerIncentive" id="leadBrokerIncentive" type="text" placeholder="5,000" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="leadBrokerCommisionRate">Comission Rate (%)</label>
+                  <input class="form-control" ng-model="leadBrokerCommisionRate" id="leadBrokerCommisionRate" type="text" placeholder="3.5" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="leadBrokerWitholdingTax">Witholding Tax</label>
+                  <input class="form-control" ng-model="leadBrokerWitholdingTax" id="leadBrokerWitholdingTax" type="text" placeholder="5,000" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="leadBrokerBrokersTax">Brokers Tax</label>
+                  <input class="form-control" ng-model="leadBrokerBrokersTax" id="leadBrokerBrokersTax" type="text" placeholder="2,000" required="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="salespersonIncentive">Branch Manager Total</label>
+                  <input class="form-control" ng-model="leadBrokerTotal" id="leadBrokerTotal" type="text" placeholder="105,000" required="">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="salesPersonCommisionRate">To Receive (after tax)</label>
+                  <input class="form-control" ng-model="leadBrokerAfterTax" id="leadBrokerAfterTax" type="text" placeholder="90,000" required="">
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="nameOfleadBroker">Commission & Incentive Billing  : </label>
+                  <!-- <input class="form-control" ng-model="nameOfleadBroker" id="nameOfleadBroker" type="text" placeholder="Pedro Gonzales" required=""> -->
+                </div>
+                <div class="col-md-4 mb-3">
+
+                  <div class="text-danger wrapper text-center" style="font-size: large;" id="textDanger"></div>
+                  <div class="text-success wrapper text-center" style="font-size: large;" id="textSuccess"></div>
+                </div>
+                  <!-- <div class="col-sm-8">
+                    <div class="form-control-static">
+                      Hello !... This is
+                      static text
+                    </div>
+                  </div> -->
+              </div>
+              <br>
+              <div class="card-title">
+                <h4>Schedule Of Release</h4>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="releaseIncentive">Incentive- Every (day)</label>
+                  <input class="form-control" ng-model="releaseIncentive" id="releaseIncentive" type="text" placeholder="15th day of the month" required="">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="leadBrokerCommisionRate">Commission- Every (payment/month)</label>
+                  <input class="form-control" ng-model="leadBrokerCommisionRate" id="leadBrokerCommisionRate" type="text" placeholder="2nd payment" required="">
+                </div>
+              </div>
+              <br>
+              <button class="btn btn-primary" type="button" ng-click="addBuyerSubmit()" style="float: right;">Submit</button>
+              <!-- <input class="btn btn-light" type="reset" value="Clear"> -->
+            </form>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
